@@ -1,0 +1,66 @@
+CREATE DATABASE EmployeeDB;
+USE EmployeeDB;
+CREATE TABLE Employees (ID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(50), Department VARCHAR(50), Branch VARCHAR(50), Salary DECIMAL(18, 2));
+INSERT INTO Employees (Name, Department, Branch, Salary) 
+VALUES 
+('Atharva','Finance', 'Mumbai', 100000.00),
+('Kartik', 'R&D', 'Banglore', 72000.00),
+('Pranav','Manufacturing','Banglore',80000.00),
+('Ramesh','Security','Mumbai',112000.00),
+('Adwit','Development','Gurgaon',125000.00),
+('Amol','Sales','Banglore',80000.00),
+('Yash','Development','Gurgaon',50000.00),
+('Arsal','Design','Noida',70000.00),
+('Himanshu','Manufacturing','Mumbai',65000.00),
+('Anubhav','Development','Gurgaon',100000.00),
+('Akshit','Finance','Mumbai',90000.00),
+('Vidipt','Security','Banglore',80000.00),
+('Rushabh','Sales','Banglore',75000),
+('Tanmay','R&D','Mumbai',65000.00),
+('Kushagra','Development','Noida',92000.00);
+
+SELECT * FROM Employees;
+
+UPDATE Employees 
+SET Branch = 'Delhi' 
+WHERE Department = 'Design';
+
+DELETE FROM Employees 
+WHERE Name = 'Arsal';
+
+SELECT DISTINCT Salary FROM Employees;
+
+SELECT * FROM Employees 
+WHERE Salary > 100000;
+
+SELECT * FROM Employees 
+WHERE Branch = 'Banglore' AND Salary > 75000.00;
+
+SELECT * FROM Employees 
+ORDER BY Salary DESC;
+
+SELECT * FROM Employees 
+WHERE Name LIKE 'A%';
+
+SELECT * FROM Employees 
+WHERE Branch IN ('Mumbai', 'Banglore');
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY AUTO_INCREMENT,
+    DepartmentName VARCHAR(50),
+    Manager VARCHAR(50)
+);
+
+INSERT INTO Departments (DepartmentName, Manager) 
+VALUES 
+('Finance', 'Apurva'),
+('R&D', 'Nikhil'),
+('Manufacturing', 'Anushka'),
+('Security', 'Rohan'),
+('Development', 'Pratap'),
+('Sales', 'Sanika'),
+('Design', 'Vanshita');
+
+SELECT Employees.Name, Employees.Department, Departments.Manager
+FROM Employees
+INNER JOIN Departments ON Employees.Department = Departments.DepartmentName;

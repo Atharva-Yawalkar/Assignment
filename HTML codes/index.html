@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student and Company Information Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Student and Company Information Form</h2>
+    <form id="infoForm" action="/submit_form">
+
+        <h3>Student Information</h3>
+        <label for="s_fname">First name:</label><br>
+        <input type="text" id="s_fname" name="s_fname"><br>
+        <label for="s_lname">Last name:</label><br>
+        <input type="text" id="s_lname" name="s_lname"><br>
+        <label for="s_email">Email:</label><br>
+        <input type="email" id="s_email" name="s_email"><br>
+        <label for="s_dob">Date of Birth:</label><br>
+        <input type="date" id="s_dob" name="s_dob"><br>
+
+        <h3>Company Information</h3>
+        <label for="c_name">Company Name:</label><br>
+        <input type="text" id="c_name" name="c_name"><br>
+        <label for="c_job">Job Title:</label><br>
+        <input type="text" id="c_job" name="c_job"><br>
+        <label for="c_startdate">Start Date:</label><br>
+        <input type="date" id="c_startdate" name="c_startdate"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
